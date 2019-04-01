@@ -1,0 +1,9 @@
+.theme-toggle {
+  --primary-bg-color: white;
+  --primary-txt-color: black;
+
+  &[data-theme="dark"] {
+    --primary-bg-color: black;
+    --primary-txt-color: white;
+  }
+}

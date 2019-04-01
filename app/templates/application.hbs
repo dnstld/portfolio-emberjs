@@ -1,17 +1,47 @@
-{{#link-to "index" data-test-link-to-home}}
-  Home
-{{/link-to}}
+<ThemeToggle @theme={{if isDark "dark" "light"}}>
+  <div class="application">
+    {{#if isDark}}
+      <button
+        type="button"
+        onclick={{action (mut isDark) false}}
+      >
+        Light
+      </button>
+    {{else}}
+      <button
+        type="button"
+        onclick={{action (mut isDark) true}}
+      >
+        Dark
+      </button>
+    {{/if}}
 
-{{#link-to "about" data-test-link-to-about}}
-  About
-{{/link-to}}
-
-{{#link-to "portfolio" data-test-link-to-portfolio}}
-  Portfolio
-{{/link-to}}
-
-{{#link-to "contact" data-test-link-to-contact}}
-  Contact
-{{/link-to}}
-
-{{outlet}}
+    <nav>
+      <ul>
+        <li>
+          {{#link-to "index" data-test-link-to-home}}
+            Home
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "about" data-test-link-to-about}}
+            About
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "portfolio" data-test-link-to-portfolio}}
+            Portfolio
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "contact" data-test-link-to-contact}}
+            Contact
+          {{/link-to}}
+        </li>
+      </ul>
+    </nav>
+    <div>
+      {{outlet}}
+    </div>
+  </div>
+</ThemeToggle>

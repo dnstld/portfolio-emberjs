@@ -1,0 +1,12 @@
+.theme-toggle {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-txt-color);
+
+  &.-transition,
+  &.-transition *,
+  &.-transition *:before,
+  &.-transition *:after {
+    transition: all 1s;
+    transition-delay: 0;
+  }
+}
