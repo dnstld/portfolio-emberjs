@@ -1,47 +1,46 @@
 <ThemeToggle @theme={{if isDark "dark" "light"}}>
-  <div class="application">
-    {{#if isDark}}
-      <button
-        type="button"
-        onclick={{action (mut isDark) false}}
-      >
-        Light
-      </button>
-    {{else}}
-      <button
-        type="button"
-        onclick={{action (mut isDark) true}}
-      >
-        Dark
-      </button>
-    {{/if}}
+  <div class="R--application">
+    <header class="R--application_header">
+      <div class="R--application_tools">
+        {{x-toggle
+          theme="material"
+          size="small"
+          value=this.isDark
+          showLabels=true
+          offLabel="Light"
+          onLabel="Dark"
+          onToggle=(action (mut isDark))
+        }}
+      </div>
 
-    <nav>
-      <ul>
-        <li>
-          {{#link-to "index" data-test-link-to-home}}
-            Home
-          {{/link-to}}
-        </li>
-        <li>
-          {{#link-to "about" data-test-link-to-about}}
-            About
-          {{/link-to}}
-        </li>
-        <li>
-          {{#link-to "portfolio" data-test-link-to-portfolio}}
-            Portfolio
-          {{/link-to}}
-        </li>
-        <li>
-          {{#link-to "contact" data-test-link-to-contact}}
-            Contact
-          {{/link-to}}
-        </li>
-      </ul>
-    </nav>
-    <div>
+      <nav class="R--application_nav">
+        <ul class="list">
+          <li class="item">
+            {{#link-to "index" class="link" data-test-link-to-home=""}}
+              Home
+            {{/link-to}}
+          </li>
+          <li class="item">
+            {{#link-to "about" class="link" data-test-link-to-about=""}}
+              About
+            {{/link-to}}
+          </li>
+          <li class="item">
+            {{#link-to "portfolio" class="link" data-test-link-to-portfolio=""}}
+              Portfolio
+            {{/link-to}}
+          </li>
+          <li class="item">
+            {{#link-to "contact" class="link" data-test-link-to-contact=""}}
+              Contact
+            {{/link-to}}
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="R--application_main">
       {{outlet}}
-    </div>
+    </main>
   </div>
 </ThemeToggle>

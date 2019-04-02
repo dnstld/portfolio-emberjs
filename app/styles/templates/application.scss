@@ -1,4 +1,43 @@
-.application {
+.R--application {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template: auto 1fr / 100%;
+}
+
+.R--application_header {
+  grid-template: auto auto / 100%;
+}
+
+.R--application_tools {
+  background-color: var(--bg-tools);
+  padding: .5rem 1.5rem;
+}
+
+.R--application_nav {
+  color: var(--txt-color);
+
+  > .list {
+    display: flex;
+    justify-content: center;
+
+    > .item {
+      > .link {
+        display: block;
+        padding: 1rem .5rem;
+        margin: .5rem;
+        user-select: none;
+
+        &:focus {
+          outline: 1px dotted palevioletred;
+        }
+      }
+    }
+  }
+}
+
+.R--application_main {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
