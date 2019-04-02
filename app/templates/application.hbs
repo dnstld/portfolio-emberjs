@@ -1,7 +1,9 @@
 <ThemeToggle @theme={{if isDark "dark" "light"}}>
   <div class="R--application">
-    <header class="R--application_header">
-      <div class="R--application_tools">
+    <div class="R--application_topbar">
+      <div class="wrapper">
+        <SocialMedia />
+        
         {{x-toggle
           theme="material"
           size="small"
@@ -10,34 +12,35 @@
           offLabel="Light"
           onLabel="Dark"
           onToggle=(action (mut isDark))
+          class="themebutton"
         }}
       </div>
+    </div>
 
-      <nav class="R--application_nav">
-        <ul class="list">
-          <li class="item">
-            {{#link-to "index" class="link" data-test-link-to-home=""}}
-              Home
-            {{/link-to}}
-          </li>
-          <li class="item">
-            {{#link-to "about" class="link" data-test-link-to-about=""}}
-              About
-            {{/link-to}}
-          </li>
-          <li class="item">
-            {{#link-to "portfolio" class="link" data-test-link-to-portfolio=""}}
-              Portfolio
-            {{/link-to}}
-          </li>
-          <li class="item">
-            {{#link-to "contact" class="link" data-test-link-to-contact=""}}
-              Contact
-            {{/link-to}}
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="R--application_nav">
+      <ul class="list">
+        <li class="item">
+          {{#link-to "index" class="link" data-test-link-to-home=""}}
+            Home
+          {{/link-to}}
+        </li>
+        <li class="item">
+          {{#link-to "about" class="link" data-test-link-to-about=""}}
+            About
+          {{/link-to}}
+        </li>
+        <li class="item">
+          {{#link-to "portfolio" class="link" data-test-link-to-portfolio=""}}
+            Portfolio
+          {{/link-to}}
+        </li>
+        <li class="item">
+          {{#link-to "contact" class="link" data-test-link-to-contact=""}}
+            Contact
+          {{/link-to}}
+        </li>
+      </ul>
+    </nav>
 
     <main class="R--application_main">
       {{outlet}}

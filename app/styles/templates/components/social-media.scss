@@ -1,0 +1,17 @@
+.C--social-media {
+  > .list {
+    display: flex;
+
+    > .item {
+      margin-right: .25rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      > .link {
+        padding: .5rem;
+      }
+    }
+  }
+}

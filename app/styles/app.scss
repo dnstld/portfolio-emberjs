@@ -1,8 +1,12 @@
 @import "base/colors";
+@import "base/typography";
 @import "base/reset";
 @import "base/unclassed";
+
+@import "utils/mixins";
 
 @import "templates/application";
 @import "templates/index";
 
 @import "templates/components/theme-toggle";
+@import "templates/components/social-media";
