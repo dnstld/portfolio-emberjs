@@ -36,19 +36,24 @@
 }
 
 .R--application_nav {
-  color: var(--txt-color);
+  display: flex;
+  justify-content: center;
 
   > .list {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
+    color: var(--color-primary);
 
     > .item {
       > .link {
         font-size: $font-small;
         display: block;
-        padding: .5rem;
-        margin: .5rem;
+        padding: .75rem;
         user-select: none;
+
+        &.-active {
+          border-bottom: 2px solid palevioletred;
+        }
 
         &:focus {
           outline: 1px dotted palevioletred;

@@ -1,10 +1,23 @@
-<section class="R--index">
-  <header class="R--index_header">
-    <h1 class="name">Denis Toledo</h1>
-    <p class="phrase">Front-end developer with a taste for design</p>
-  </header>
+<div class="R--index">
+  <div class="R--index_main">
+    <div class="R--index_data">
+      <span class="avatar"></span>
+      <header class="header">
+        <h1 class="name">Denis Toledo</h1>
+      </header>
+      <p class="phrase">Front-end<br> developer<br> with a taste<br> for design</p>
+    </div>
 
-  {{!-- <footer class="R--index_footer">
-    <button class="btn">See projects</button>
-  </footer> --}}
-</section>
+    <div class="R--index_actions">
+      {{#link-to "portfolio" class="btn"}}
+        {{fa-icon "search" class="icon -search"}} View my work
+      {{/link-to}}
+
+      <a href="https://wa.me/5511982013667" class="btn -whatsapp">
+        {{fa-icon "whatsapp" class="icon"}}
+      </a>
+    </div>
+  </div>
+
+  <LocationMap />
+</div>

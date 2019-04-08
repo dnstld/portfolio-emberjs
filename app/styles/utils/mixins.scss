@@ -28,3 +28,13 @@
     @content;
   }
 }
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+@mixin centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

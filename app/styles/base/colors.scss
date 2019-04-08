@@ -1,11 +1,11 @@
 .C--theme-toggle {
-  --bg-color: #f2f2f2;
-  --txt-color: #33333A;
-  --bg-tools: #D4D4D4;
+  --bg-primary: #33333A;
+  --bg-tools: #2C2C34;
+  --color-primary: #f1f1f1;
 
-  &[data-theme="dark"] {
-    --bg-color: #33333A;
-    --txt-color: #f1f1f1;
-    --bg-tools: #2C2C34;
+  &[data-theme="light"] {
+    --bg-primary: #f2f2f2;
+    --bg-tools: #D4D4D4;
+    --color-primary: #33333A;
   }
 }
