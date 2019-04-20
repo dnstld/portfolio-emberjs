@@ -7,11 +7,15 @@ module.exports = function(defaults) {
     prember: {
       urls: [
         '/',
-        'about',
         'portfolio',
         'contact'
       ]
-    }
+    },
+    svgJar: {
+      sourceDirs: [
+        'public/assets/icons'
+      ]
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated

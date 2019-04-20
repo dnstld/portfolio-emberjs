@@ -1,35 +1,32 @@
 .R--index {
+  display: grid;
+  grid-template: auto auto / 100%;
+  grid-row-gap: 3rem;
+  grid-template-areas: "subject"
+                       "info";
   box-sizing: border-box;
   width: 100%;
   max-width: 1200px;
-  height: 100%;
   padding: 2rem;
   position: relative;
 
-  @include for-tablet-portrait-up {
+  @include for-tablet-landscape-up {
+    grid-template: 1fr / auto 1fr;
+    grid-column-gap: 5rem;
+    grid-row-gap: 0;
+    grid-template-areas: "subject info";
     align-items: center;
   }
-}
-
-.R--index_main {
-  display: grid;
-  grid-template: auto auto / 100%;
-  grid-row-gap: 2rem;
-}
-
-.R--index_content {
-  width: 100%;
-
-  @include for-tablet-landscape-up {
-    display: flex;
+  > .cards {
+    width: 100%;
   }
 }
 
-.R--index_data {
+.R--index_subject {
   display: grid;
+  grid-area: subject;
   grid-template: auto auto auto / 100%;
   grid-row-gap: 1rem;
-  text-transform: uppercase;
   font-weight: 300;
 
   > .avatar {
@@ -44,6 +41,8 @@
     background-size: 100%;
   }
   > .header {
+    text-transform: uppercase;
+
     > .name {
       display: inline-block;
       font-size: $font-large;
@@ -67,55 +66,103 @@
     font-size: $font-huge;
     font-weight: inherit;
     line-height: 120%;
+    text-transform: uppercase;
 
     @include for-tablet-landscape-up {
       font-size: 2.5rem;
     }
   }
-}
+  > .contact {
+    display: grid;
+    font-size: $font-small;
+    margin-top: 1rem;
 
-.R--index_actions {
-  display: flex;
+    > .email,
+    > .phone {
+      display: flex;
+      align-items: center;
 
-  > .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    min-width: 0;
-    line-height: 1.5;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    background-color: transparent;
-    border-radius: .5rem;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 400;
-    font-family: inherit;
-    vertical-align: middle;
-    letter-spacing: normal;
-    padding: .5rem 1rem;
-    margin: 0;
-    user-select: none;
-    outline: none;
-    box-shadow: none;
-    white-space: nowrap;
-    cursor: pointer;
-    overflow: visible;
-
-    &.-whatsapp {
-      margin-left: .5rem;
-      background-color: #1cb39b;
-      color: #fff;
-      border-color: #fff;
-    }
-
-    > .icon {
-      flex-shrink: 0;
-
-      &.-search {
+      > .icon {
+        color: palevioletred;
         margin-right: .5rem;
       }
+    }
+    > .actions {
+      margin-top: 1rem;
+      
+      > .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        min-width: 0;
+        line-height: 1.5;
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        background-color: transparent;
+        border-radius: .5rem;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 400;
+        font-family: inherit;
+        vertical-align: middle;
+        letter-spacing: normal;
+        padding: .5rem 1rem;
+        margin: 0 .5rem 0 0;
+        user-select: none;
+        outline: none;
+        box-shadow: none;
+        white-space: nowrap;
+        cursor: pointer;
+        overflow: visible;
+        
+        &.-mail {
+          background-color: #0991FF;
+          color: #fff;
+          border-color: #fff;
+        }
+        &.-phone {
+          background-color: #68BF00;
+          color: #fff;
+          border-color: #fff;
+        }
+        &.-whatsapp {
+          background-color: #1cb39b;
+          color: #fff;
+          border-color: #fff;
+        }
+    
+        > .icon {
+          flex-shrink: 0;
+    
+          &.-search {
+            margin-right: .5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.R--index_info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-area: info;
+  grid-row-gap: 1.5rem;
+  line-height: 150%;
+
+  > .paragraph {
+    font-weight: 300;
+
+    @include for-tablet-landscape-up {
+      padding: 0 1rem;
+    }
+  }
+  > .quote {
+    color: palevioletred;
+
+    &.-bottom {
+      margin-left: auto;
     }
   }
 }

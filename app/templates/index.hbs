@@ -1,23 +1,44 @@
 <div class="R--index">
-  <div class="R--index_main">
-    <div class="R--index_data">
-      <span class="avatar"></span>
-      <header class="header">
-        <h1 class="name">Denis Toledo</h1>
-      </header>
-      <p class="phrase">Front-end<br> developer<br> with a taste<br> for design</p>
+  <section class="R--index_subject">
+    <span class="avatar"></span>
+    <header class="header">
+      <h1 class="name">Denis Toledo</h1>
+    </header>
+    <h2 class="phrase">Front-end<br> developer<br> with a taste<br> for design</h2>
+    <div class="contact">
+      <span class="email">{{svg-jar "email" class="icon" width=".75rem"}} contato@denistoledo.com.br</span>
+      <span class="phone">{{svg-jar "whatsapp" class="icon" width=".75rem"}}  +55 11 982013667</span>
+      <div class="actions">
+        <a href="mailto:contato@denistoledo.com.br?subject=Mail from Our Site" class="btn -mail">
+          {{svg-jar "email" class="icon" width="1rem"}}
+        </a>
+        <a href="tel:5511982013667" class="btn -phone">
+          {{svg-jar "phone" class="icon" width="1rem"}}
+        </a>
+        <a href="https://wa.me/5511982013667" class="btn -whatsapp">
+          {{svg-jar "whatsapp" class="icon" width="1rem"}}
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="R--index_actions">
+  <article class="R--index_info">
+    {{svg-jar "quote-left" class="quote" width="2rem"}}
+    <p class="paragraph">I am a front-end developer with deep understanding of HTML5 and CSS3, experience with defining rules for a robust, scalable CSS architecture and comfortable with debugging and problem-solving.</p>
+    <p class="paragraph">Experience with writing clean, maintainable code. Always looking for better ways to get the job done.</p>
+    <p class="paragraph">An enthusiast user experience and user interface designer with strong visual skills and devoted to the Human-centred design process of product development.</p>
+    {{svg-jar "quote-right" class="quote -bottom" width="2rem"}}
+    {{!-- <div>
       {{#link-to "portfolio" class="btn"}}
         {{fa-icon "search" class="icon -search"}} View my work
+      {{/link-to}}
+      {{#link-to "contact" class="btn"}}
+        {{fa-icon "envelope-o" class="icon -search"}} Contact me
       {{/link-to}}
 
       <a href="https://wa.me/5511982013667" class="btn -whatsapp">
         {{fa-icon "whatsapp" class="icon"}}
       </a>
-    </div>
-  </div>
-
-  <LocationMap />
+    </div> --}}
+  </article>
 </div>
