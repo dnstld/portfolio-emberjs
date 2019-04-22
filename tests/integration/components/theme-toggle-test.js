@@ -6,21 +6,33 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | theme-toggle', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`{{theme-toggle}}`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
+  test('it renders as a dark mode', async function(assert) {
     await render(hbs`
-      {{#theme-toggle}}
+      <ThemeToggle @theme="dark">
         template block text
-      {{/theme-toggle}}
+      </ThemeToggle>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(
+      this.element.textContent.trim(), 
+      'template block text'
+    );
+
+    assert.dom('[data-test-theme-toggle]').hasAttribute('data-theme', 'dark');
+  });
+
+  test('it renders as a light mode', async function(assert) {
+    await render(hbs`
+      <ThemeToggle @theme="light">
+        template block text
+      </ThemeToggle>
+    `);
+
+    assert.equal(
+      this.element.textContent.trim(), 
+      'template block text'
+    );
+
+    assert.dom('[data-test-theme-toggle]').hasAttribute('data-theme', 'light');
   });
 });

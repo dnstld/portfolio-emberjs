@@ -1,26 +1,21 @@
-import { module, skip } from 'qunit';
+import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | social-media', function(hooks) {
+module('Integration | Component | social-media', function (hooks) {
   setupRenderingTest(hooks);
 
-  skip('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  test('it renders', async function (assert) {
+    await render(hbs`<SocialMedia />`);
 
-    await render(hbs`{{social-media}}`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#social-media}}
-        template block text
-      {{/social-media}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('[data-test-social-media="github"]').exists();
+    assert.dom('[data-test-social-media="github"]').hasAttribute('href', 'https://github.com/dnstld');
+    assert.dom('[data-test-social-media="twitter"]').exists();
+    assert.dom('[data-test-social-media="twitter"]').hasAttribute('href', 'https://twitter.com/dnstld');
+    assert.dom('[data-test-social-media="instagram"]').exists();
+    assert.dom('[data-test-social-media="instagram"]').hasAttribute('href', 'https://www.instagram.com/denistoledodev');
+    assert.dom('[data-test-social-media="linkedin"]').exists();
+    assert.dom('[data-test-social-media="linkedin"]').hasAttribute('href', 'https://www.linkedin.com/in/denistoledo');
   });
 });
