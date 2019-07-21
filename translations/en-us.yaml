@@ -1,0 +1,15 @@
+theme:
+  dark: Dark
+  light: Light
+nav:
+  about: About
+about:
+  name: Denis Toledo
+  title: 'Front-end<br> developer<br> with a taste<br> for design'
+  description:
+    paragraph1: I am a Front-end Developer, currently working as a User Interface Engineer at PayCertify, with deep understanding of HTML5 and CSS3, experience with defining rules for a robust, scalable CSS architecture and comfortable with debugging and problem-solving.
+    paragraph2: Experience with writing clean, maintainable code. Always looking for better ways to get the job done.
+    paragraph3: An enthusiast user experience and user interface designer with strong visual skills and devoted to the Human-centered design process of product development.
+contact:
+  phone: +55 11 982013667
+  email: contato@denistoledo.com.br
