@@ -9,21 +9,30 @@ const { modulePrefix } = config;
 export default Controller.extend({
   intl: service(),
   isDark: true,
-  activeLocale: computed.readOnly('intl.locale'),
 
-  locales: computed(function() {
-    return lookupByFactoryType('translations', modulePrefix).map(moduleName => moduleName.split('/').pop());
+  activeLocale: computed('intl.locale', {
+    get() {
+      return this.intl.locale;
+    }
   }).readOnly(),
 
-  selections: computed('locales.[]', 'activeLocale', function() {
-    let active = get(this, 'activeLocale');
+  locales: computed({
+    get() {
+      return lookupByFactoryType('translations', modulePrefix).map(moduleName => moduleName.split('/').pop());
+    }
+  }).readOnly(),
 
-    return get(this, 'locales').map(locale => {
-      return {
-        locale: locale,
-        active: active.indexOf(locale) > -1
-      };
-    });
+  selections: computed('locales.[]', 'activeLocale', {
+    get() {
+      let active = this.get('activeLocale');
+
+      return get(this, 'locales').map(locale => {
+        return {
+          locale: locale,
+          active: active.indexOf(locale) > -1
+        };
+      });
+    }
   }).readOnly(),
 
   actions: {
