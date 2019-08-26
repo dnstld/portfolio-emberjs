@@ -11,7 +11,7 @@ export default Controller.extend({
   isDark: true,
 
   activeLocale: computed('intl.locale', {
-    get activeLocale() {
+    get() {
       return this.intl.locale;
     }
   }).readOnly(),
@@ -24,7 +24,7 @@ export default Controller.extend({
 
   selections: computed('locales.[]', 'activeLocale', {
     get() {
-      let active = get(this, 'activeLocale');
+      let active = this.get('activeLocale');
 
       return get(this, 'locales').map(locale => {
         return {
