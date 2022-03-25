@@ -3,7 +3,7 @@
     <div class="R--application_topbar">
       <div class="wrapper">
         <SocialMedia />
-        
+
         {{x-toggle
           theme="material"
           size="small"
@@ -29,7 +29,10 @@
 
         <div class="languages">
           {{#each selections as |model|}}
-            <button class={{if model.active "-active"}} {{action "changeLocale" model.locale}}>
+            <button
+              class={{if model.active "-active"}} {{action "changeLocale" model.locale}}
+              type="button"
+            >
               {{model.locale}}
             </button>
           {{/each}}
