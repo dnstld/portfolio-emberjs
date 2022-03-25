@@ -52,34 +52,9 @@
       justify-content: center;
     }
 
-    > .list {
-      display: inline-flex;
-      justify-content: center;
-      color: var(--color-primary);
-
-      > .item {
-        > .link {
-          font-size: $font-small;
-          display: block;
-          padding: .75rem;
-          user-select: none;
-
-          &.-active {
-            border-bottom: 2px solid palevioletred;
-          }
-          &:focus {
-            outline: 1px dotted palevioletred;
-          }
-
-          @include for-tablet-portrait-up {
-            font-size: $font-default;
-          }
-        }
-      }
-    }
     > .languages {
       display: flex;
-      margin-left: 1rem;
+      margin-left: auto;
       padding-left: 1rem;
 
       @include for-tablet-portrait-up {

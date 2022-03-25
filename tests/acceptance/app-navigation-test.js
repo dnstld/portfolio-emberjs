@@ -1,7 +1,7 @@
 import { module, test, skip } from 'qunit';
-import { 
-  visit, 
-  currentURL, 
+import {
+  visit,
+  currentURL,
   click
 } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
@@ -13,7 +13,7 @@ module('Acceptance | app navigation', function (hooks) {
     await visit('/');
 
     assert.equal(
-      currentURL(), 
+      currentURL(),
       '/',
       'should open the home page'
     )
@@ -27,17 +27,6 @@ module('Acceptance | app navigation', function (hooks) {
       currentURL(),
       '/portfolio',
       'should navigate to portfolio page'
-    )
-  });
-
-  skip('should navigate to home page', async function (assert) {
-    await visit('/about');
-    await click('[data-test-link-to-home]');
-
-    assert.equal(
-      currentURL(),
-      '/',
-      'should navigate to home page'
     )
   });
 

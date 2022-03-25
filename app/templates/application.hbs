@@ -19,14 +19,6 @@
 
     <nav class="R--application_nav">
       <div class="wrapper">
-        <ul class="list">
-          <li class="item">
-            {{#link-to "index" class="link" activeClass="-active" data-test-link-to-home=""}}
-              {{t "nav.about"}}
-            {{/link-to}}
-          </li>
-        </ul>
-
         <div class="languages">
           {{#each selections as |model|}}
             <button
